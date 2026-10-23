@@ -13,6 +13,19 @@
       "path": "models/earnotch/",
       "current": null,
       "note": "剪耳识别，输入是 landmarks 裁出的耳部 ROI，不自己检测猫脸"
+    },
+    "cat_binary": {
+      "owner": "猫脸模块（分类器）",
+      "path": "models/cat_vs_notcat.onnx",
+      "current": "cat_vs_notcat.onnx",
+      "format": "onnx",
+      "input": "float32 [1,3,224,224]，RGB，x/255 后按 ImageNet mean/std 归一化",
+      "output": "float32 [1,2] logits，顺序 [cat, notcat]",
+      "opset": 18,
+      "size_mb": 8.45,
+      "md5": "7fd6ed39804627e89b564e0585446821",
+      "validated_on": "Raspberry Pi 4B / Debian 13 / onnxruntime 1.31.0 (aarch64, Python 3.13)",
+      "note": "猫/非猫二分类，MobileNetV2 主干。Pi 上 4 线程 ≈119ms/帧；模型输出是 logits，用前必须 softmax"
     }
   }
 }

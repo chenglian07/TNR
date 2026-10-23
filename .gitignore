@@ -68,3 +68,6 @@ models/*.onnx
 models/*.pt
 models/*.tflite
 models/*.param
+
+# 本地测试集（图片不进 Git，用 scp 同步到板子）
+test_data/

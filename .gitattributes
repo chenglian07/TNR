@@ -11,3 +11,8 @@ pyproject.toml text eol=lf
 README-catvision.md text eol=lf
 *.onnx binary
 *.db binary
+# 测试图片同样是二进制：不加这两行，tests/** 的 text eol=lf 规则会让 Git
+# 对 PNG/JPG 做换行规范化，一旦文件里恰好有 CRLF 就会被改坏
+*.png binary
+*.jpg binary
+*.jpeg binary
